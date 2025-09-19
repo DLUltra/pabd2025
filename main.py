@@ -2,6 +2,38 @@
 # Revisão de Orientação a Objetos
 # Prof. Guilherme Leal Santos
 
+# Aula 19/09 - Orientação a Objetos
+from conta import Conta
+from cliente import Cliente
+
+cliente1 = Cliente('Elvis Presley', '111.222.333-44')
+conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
+conta1.extrato()
+# conta1.deposita(100)
+# conta1.extrato()
+
+# conta2 = conta1
+# conta2.extrato()
+# conta2.saca(100)
+# conta2.extrato()
+# conta1.extrato()
+
+# if(conta1.saca(1000)):
+#     print('OK')
+# else:
+#     print('Tá Liso')
+
+cliente2 = Cliente('Jonhny Cage', '222.333.444-55')
+conta2 = Conta(cliente2, 2, 234, 'jonhnny@outlook.com', 234567)
+conta2.extrato()
+
+if(conta2.transfere(conta1, 1000)):
+    print('OK')
+else:
+    print('Tá liso')
+
+'''
+# Aula 12/092023 - Listas e Funções Lambda
 frutas = ['Maçã', 'Banana', 'Laranja']
 print(frutas)
 print(frutas[0])
@@ -54,3 +86,4 @@ from functools import reduce
 
 soma = reduce(lambda soma, n: soma + n, numeros)
 print(soma)
+'''
