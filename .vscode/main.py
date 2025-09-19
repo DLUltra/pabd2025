@@ -2,7 +2,9 @@
 # Revisão de Orientação a Objetos
 # Prof. Guilherme Leal Santos
 
-##Criar e visualizar listas
+
+###Aula 12/09/2025 - Listas e Funções lambda
+'''##Criar e visualizar listas
 frutas = ['Maçã', 'Banana', 'Laranja']
 print(frutas)
 print(frutas[0])
@@ -60,4 +62,20 @@ from functools import reduce
 # soma = reduce(lambda soma, n: soma + n, numeros, 1)
 #Soma começando com 0
 soma = reduce(lambda soma, n: soma + n, numeros,)
-print(soma)
+print(soma)'''
+
+
+###Aula 19/09/2025 - Orientação a Objetos
+from conta import Conta
+from cliente import Cliente
+cliente1 = Cliente('Elvis Presley', '222.222.222-55')
+conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
+conta1.extrato()
+conta1.deposita(150)
+conta1.extrato()
+
+conta2 = conta1
+conta2.extrato()
+conta2.sacar(100)
+conta2.extrato()
+conta1.extrato()
