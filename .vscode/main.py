@@ -68,14 +68,56 @@ print(soma)'''
 ###Aula 19/09/2025 - Orientação a Objetos
 from conta import Conta
 from cliente import Cliente
-cliente1 = Cliente('Elvis Presley', '222.222.222-55')
+'''
+cliente1 = Cliente('Elvis Presley', '111.222.333-44')
 conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
 conta1.extrato()
-conta1.deposita(150)
-conta1.extrato()
+# conta1.deposita(100)
+# conta1.extrato()
 
-conta2 = conta1
+# conta2 = conta1
+# conta2.extrato()
+# conta2.saca(100)
+# conta2.extrato()
+# conta1.extrato()
+
+# if(conta1.saca(1000)):
+#     print('OK')
+# else:
+#     print('Tá Liso')
+
+cliente2 = Cliente('Jonhny Cage', '222.333.444-55')
+conta2 = Conta(cliente2, 2, 234, 'jonhnny@outlook.com', 234567)
 conta2.extrato()
-conta2.sacar(100)
-conta2.extrato()
+
+if(conta2.transfere(conta1, 1000)):
+    print('OK')
+else:
+    print('Tá liso')
+'''
+# Aula 26/09 - agregação, compisição e modificadores de acesso
+cliente1 = Cliente('Elvis Presley', '111.222.333-44')
+conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
 conta1.extrato()
+conta1.saca(500)
+conta1.deposita(300)
+
+cliente2 = Cliente('Jonhny Cage', '222.333.444-55')
+conta2 = Conta(cliente2, 2, 234, 'jonhnny@outlook.com', 234567)
+conta2.extrato()
+conta2.saca(100)
+conta2.deposita(600)
+
+conta1.transfere(conta2, 2000)
+conta2.saca(10000)
+
+conta1.historico.imprime()
+conta2.historico.imprime()
+
+# sem decorator
+print(conta1.get_saldo())
+
+# com decorator
+print(conta1.saldo)
+
+print(conta1.saldo+conta2.saldo)
