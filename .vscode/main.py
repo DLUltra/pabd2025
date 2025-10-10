@@ -68,6 +68,7 @@ print(soma)'''
 ###Aula 19/09/2025 - Orientação a Objetos
 from conta import Conta
 from cliente import Cliente
+from funcionario.funcionario import Funcionario
 '''
 cliente1 = Cliente('Elvis Presley', '111.222.333-44')
 conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
@@ -95,15 +96,17 @@ if(conta2.transfere(conta1, 1000)):
 else:
     print('Tá liso')
 '''
+
+'''
 # Aula 26/09 - agregação, compisição e modificadores de acesso
-cliente1 = Cliente('Elvis Presley', '111.222.333-44')
-conta1 = Conta(cliente1, 1, 123, 'elvis@gmail.com', 12345678)
+cliente1 = Cliente("Elvis Presley", "111.222.333-44")
+conta1 = Conta(cliente1, 1, 123, "elvis@gmail.com", 10000)
 conta1.extrato()
 conta1.saca(500)
 conta1.deposita(300)
 
-cliente2 = Cliente('Jonhny Cage', '222.333.444-55')
-conta2 = Conta(cliente2, 2, 234, 'jonhnny@outlook.com', 234567)
+cliente2 = Cliente("Jonhny Cage", "222.333.444-55")
+conta2 = Conta(cliente2, 2, 234, "jonhnny@outlook.com", 5000)
 conta2.extrato()
 conta2.saca(100)
 conta2.deposita(600)
@@ -115,9 +118,30 @@ conta1.historico.imprime()
 conta2.historico.imprime()
 
 # sem decorator
-print(conta1.get_saldo())
+conta1.set_saldo(-100)
+print(conta1.get_saldo()) #getter
+print(conta1.get_saldo()*1.1 + conta2.get_saldo()*0.9)
 
 # com decorator
-print(conta1.saldo)
+conta1.saldo = -100
+print(conta1.saldo) #getter
+print(conta1.saldo*1.1 + conta2.saldo*0.9)
+'''
 
-print(conta1.saldo+conta2.saldo)
+#Aula 10/10 - Metodos estaticos, metodos de classe, herança e reescrita de metodos
+
+# cliente1 = Cliente("Elvis Presley", "111.222.333-44")
+# conta1 = Conta(cliente1, 1, 123, "elvis@gmail.com", 10000)
+# print(Conta.total_contas())
+# cliente2 = Cliente("Jonhny Cage", "222.333.444-55")
+# conta2 = Conta(cliente2, 2, 234, "jonhnny@outlook.com", 5000)
+# print(Conta.total_contas())
+
+# print(Conta.lista_contas()[0].saldo)
+# print(Conta.lista_contas()[1].saldo)
+
+# print(Conta.get_saldo_total)
+
+f = Funcionario('Barto galeno', '111.222.333-44', '50000')
+f.hobby = 'Cantar'
+print(f.hobby)
