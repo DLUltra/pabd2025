@@ -128,9 +128,24 @@ print(conta1.saldo) #getter
 print(conta1.saldo*1.1 + conta2.saldo*0.9)
 '''
 
-#Aula 10/10 - Metodos estaticos, metodos de classe, herança e reescrita de metodos
+from ifrn.pessoa import Pessoa
+from funcionario.funcionario import Funcionario
+from funcionario.gerente import Gerente
+from empresa.database import SupabaseConnection
 
-# cliente1 = Cliente("Elvis Presley", "111.222.333-44")
+
+
+# Aula 10/10 - Métodos estáticos, métodos de classe
+# Herança e Reescrita de métodos
+'''
+f = Funcionario('Bartô Galeno', '111.222.333-44', 50000)
+print(f.get_bonificacao())
+print(f)
+g = Gerente('Reginaldo Rossi', '777.222.333-88', 250000, 1234, 10)
+print(g.get_bonificacao())
+print(g)
+'''
+#  cliente1 = Cliente("Elvis Presley", "111.222.333-44")
 # conta1 = Conta(cliente1, 1, 123, "elvis@gmail.com", 10000)
 # print(Conta.total_contas())
 # cliente2 = Cliente("Jonhny Cage", "222.333.444-55")
@@ -140,8 +155,12 @@ print(conta1.saldo*1.1 + conta2.saldo*0.9)
 # print(Conta.lista_contas()[0].saldo)
 # print(Conta.lista_contas()[1].saldo)
 
-# print(Conta.get_saldo_total)
+# print(Conta.get_saldo_total())
+# print(Conta.total_contas_cm())
 
-f = Funcionario('Barto galeno', '111.222.333-44', '50000')
-f.hobby = 'Cantar'
-print(f.hobby)
+# Aula 17/10 - polimorfismo, classes abstratas e supabase
+# pessoa = Pessoa('Ana Maria', '123.456.789-00')
+# print(pessoa)
+
+connection = SupabaseConnection()
+client = connection.client
