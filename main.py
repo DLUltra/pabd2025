@@ -2,6 +2,11 @@
 # Revisão de Orientação a Objetos
 # Prof. Guilherme Leal Santos
 
+from empresa.config.database import SupabaseConnection
+
+client = SupabaseConnection().client
+
+"""
 from conta import Conta
 from cliente import Cliente
 from empresa.config.database import SupabaseConnection
@@ -13,8 +18,7 @@ from ifrn.funcionario import Funcionario
 
 # Aula 17/10 - Polimorfismo, Classes Abstratas, Supabase
 
-connection = SupabaseConnection()
-client = connection.client
+client = SupabaseConnection().client
 
 # pessoa = Pessoa('Guilherme', '111.222.333-44')
 # print(pessoa)
@@ -37,7 +41,7 @@ client = connection.client
 # cliente1 = Cliente("Elvis Presley", "111.222.333-44")
 # controle.registra(cliente1)
 
-"""
+
 
 # Aula 10/10 - Métodos estáticos, métodos de classe
 # Herança e Reescrita de métodos
